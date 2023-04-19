@@ -31,58 +31,10 @@ class HashTable {
     // método hash
     _hash(nome) {
         try {
-            if (/^[a]/i.test(nome)) {
-                return 0;
-            } else if (/^[b]/i.test(nome)) {
-                return 1;
-            } else if (/^[c]/i.test(nome)) {
-                return 2;
-            } else if (/^[d]/i.test(nome)) {
-                return 3;
-            } else if (/^[e]/i.test(nome)) {
-                return 4;
-            } else if (/^[f]/i.test(nome)) {
-                return 5;
-            } else if (/^[g]/i.test(nome)) {
-                return 6;
-            } else if (/^[h]/i.test(nome)) {
-                return 7;
-            } else if (/^[i]/i.test(nome)){
-                return 8
-            } else if (/^[j]/i.test(nome)) {
-                return 9;
-            } else if (/^[k]/i.test(nome)) {
-                return 10;
-            } else if (/^[l]/i.test(nome)) {
-                return 11;
-            } else if (/^[m]/i.test(nome)) {
-                return 12;
-            } else if (/^[n]/i.test(nome)) {
-                return 13;
-            } else if (/^[o]/i.test(nome)) {
-                return 14;
-            } else if (/^[p]/i.test(nome)) {
-                return 15;
-            } else if (/^[q]/i.test(nome)) {
-                return 16;
-            } else if (/^[r]/i.test(nome)) {
-                return 17;
-            } else if (/^[s]/i.test(nome)) {
-                return 18;
-            } else if (/^[t]/i.test(nome)) {
-                return 19;
-            } else if (/^[u]/i.test(nome)) {
-                return 20;
-            } else if (/^[v]/i.test(nome)) {
-                return 21;
-            } else if (/^[w]/i.test(nome)) {
-                return 22;
-            } else if (/^[x]/i.test(nome)) {
-                return 23;
-            } else if (/^[y]/i.test(nome)) {
-                return 24;
-            } else if (/^[z]/i.test(nome)) {
-                return 25;
+            nome = nome.toLowerCase();
+            let codigo = nome.charCodeAt(0) - 97;
+            if (codigo < 25){
+                return codigo
             }
             else {
                 alert('Insira um nome válido!')
