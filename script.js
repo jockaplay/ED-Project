@@ -33,7 +33,7 @@ class HashTable {
         try {
             nome = nome.toLowerCase();
             let codigo = nome.charCodeAt(0) - 97;
-            if (codigo < 25){
+            if (codigo < 26){
                 return codigo
             }
             else {
