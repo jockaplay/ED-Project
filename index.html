@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Trabalho de ED</title>
+</head>
+
+<body>
+
+    <header>
+        <button class="hide but" onclick="voltar()" id="backButton"><ion-icon style="font-size: 18px;" name="arrow-back-outline"></ion-icon> Voltar</button>
+        <h1 class="titulo">Cadastro de pessoas</h1>
+    </header>
+    <section class="main" id="menu">
+        <div>
+            <input onclick="nav(0)" type="button" value="Cadastrar">
+            <input onclick="nav(1)" type="button" value="Procurar">
+            <input onclick="nav(2), tabela.mostrar()" type="button" value="Todos">
+        </div>
+    </section>
+    <section class="hide procurar" id="search_section">
+        <div title="Pesquisar por pessoa">
+            <input class="entrada" placeholder="Busque aqui..." type="text" name="" id="sch_name_busca">
+            <input class="sub" type="submit" value="Buscar" onclick="tabela.pesquisar(document.getElementById('sch_name_busca').value)">
+        </div>
+        <ul class="lista-de-pessoas">
+            <li class="pessoa">
+                <h2>Nome: <span id="sch_name"></span></h2>
+                <p>Idade: <span id="sch_age"></span></p>
+                <p>Cargo: <span id="sch_func"></span></p>
+            </li>
+        </ul>
+        <div class="remove">
+            <input id="rmv_but" type="button" disabled value="Remover" onclick="tabela.deletar(document.getElementById('sch_name').innerText)">
+        </div>
+    </section>
+    <section class="hide listar" id="show_section">
+        <ul>
+            <div action="">
+                <ul class="lista-de-pessoas" id="lista-de-pessoas">
+                    <input class="sub" type="button" value="Filtrar por ...">
+                    <li class="pessoa">
+                        <h2>Nome: <span id="name">placeholder</span></h2>
+                        <p>Idade: <span id="age">placeholder</span></p>
+                        <p>Cargo: <span id="func">plaehplaceholder</span></p>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </section>
+    <section class="hide cadastro" id="cad_section">
+        <div>
+            <input class="entrada" type="text" name="nome" placeholder="Nome..." id="cad_name">
+            <input class="entrada" type="text" name="idade" placeholder="Idade..." id="cad_age">
+            <input class="entrada" type="text" name="cargo" placeholder="Cargo..." id="cad_func">
+            <input class="sub" type="submit" value="Cadastrar" onclick="tabela.cadastrar(new Node(document.getElementById('cad_name').value, document.getElementById('cad_age').value, document.getElementById('cad_func').value))">
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
