@@ -92,7 +92,7 @@ class HashTable {
                 curr = curr.proximo;
             }
         }
-        document.getElementById('lista-de-pessoas').innerHTML = `<input class="sub" type="button" value="Filtrar por ...">`
+        document.getElementById('lista-de-pessoas').innerHTML = `<input disabled class="sub" type="button" value="Filtrar por ...">`
         for (let i = 0; i < retorno.length; i++){
             document.getElementById('lista-de-pessoas').innerHTML += `<li class="pessoa">
             <h2>Nome: <span id="name">${retorno[i][0]}</span></h2>
@@ -110,7 +110,7 @@ class HashTable {
         let current = this.local[idx];
         if (current != null){
             while(current != null){
-                if (current.nome == nome){
+                if (current.nome.toLowerCase() == nome.toLowerCase()){
                     document.getElementById('sch_name').innerText = current.nome
                     document.getElementById('sch_age').innerText = current.idade
                     document.getElementById('sch_func').innerText = current.funcao

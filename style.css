@@ -151,6 +151,11 @@ div input {
 .listar ul div input {
     width: 300px;
     background-color: var(--10);
+    color: var(--30);
+}
+
+.listar ul div input:disabled {
+    background-color: var(--20);
 }
 
 .cadastro div {
