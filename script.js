@@ -10,7 +10,6 @@ const main_menu = document.getElementById('menu');
 const lista_sections = [cad_section, search_section, show_section]
 
 // Criação do Nó
-
 class Node {
     constructor(nome, idade, funcao) {
         this.nome = nome;
@@ -21,19 +20,17 @@ class Node {
 }
 
 // Inicio da estrutura hash table
-
 class HashTable {
     constructor() {
         this.tamanho = 0;
         this.local = new Array(25).fill(null);
-        // this.localLen = new Array(25).fill(0);
     }
     // método hash
     _hash(nome) {
         try {
             nome = nome.toLowerCase();
             let codigo = nome.charCodeAt(0) - 97;
-            if (codigo < 26){
+            if (codigo < 26 && codigo >= 0){
                 return codigo
             }
             else {
@@ -161,7 +158,6 @@ class HashTable {
 }
 
 // Fim da estrutura hash table
-
 var tabela = new HashTable();
 
 function voltar() {
